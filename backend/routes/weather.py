@@ -1,10 +1,9 @@
 from fastapi import APIRouter, Query
-from pathlib import Path
 from dotenv import load_dotenv
 import os
 import httpx
 
-load_dotenv(dotenv_path=Path(__file__).resolve().parents[2] / ".env")
+load_dotenv()
 
 router = APIRouter()
 

@@ -1,10 +1,9 @@
 import os
-from pathlib import Path
 from dotenv import load_dotenv
 from motor.motor_asyncio import AsyncIOMotorClient
 
-# Load .env from project root (one level above backend/)
-load_dotenv(dotenv_path=Path(__file__).resolve().parents[2] / ".env")
+# Load .env locally if present, on Render env vars are set directly
+load_dotenv()
 
 MONGODB_URI = os.getenv("MONGODB_URI")
 

@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: ehas-backend
+    runtime: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: MONGODB_URI
+        sync: false
+      - key: WEATHER_API_KEY
+        sync: false
